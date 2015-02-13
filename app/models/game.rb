@@ -4,6 +4,12 @@ class Game < ActiveRecord::Base
 
   validates_length_of :users, maximum: 2, message: "can have at most two players."
 
-  scope :waiting, -> { where(:players_count => 1) }
-  scope :active, -> { where(:finished => false) }
+
+  def self.waiting
+    Game.where(:players_count => 1)
+  end
+
+  def self.active
+    Game.where(:finished => false)
+  end
 end
