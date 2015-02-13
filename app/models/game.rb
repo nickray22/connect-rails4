@@ -4,6 +4,7 @@ class Game < ActiveRecord::Base
 
   validates_length_of :users, maximum: 2, message: "can have at most two players."
 
+  serialize :board
 
   def self.waiting
     Game.where(:players_count => 1)
