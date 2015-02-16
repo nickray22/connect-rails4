@@ -7,7 +7,7 @@ class Game < ActiveRecord::Base
   serialize :board
 
   def self.waiting
-    Game.where(:players_count => 1)
+    Game.where(:num_contestants => 1)
   end
 
   def self.active
