@@ -40,7 +40,13 @@ class Game < ActiveRecord::Base
   end
 
   def self.create_board(user_email)
-    self.create(board: [[0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0]], turn_count: 0, num_contestants: 1, player1_email: user_email, finished: false)
+    self.create(board: [[0, 0, 0, 0, 0, 0, 0], 
+                        [0, 0, 0, 0, 0, 0, 0], 
+                        [0, 0, 0, 0, 0, 0, 0], 
+                        [0, 0, 0, 0, 0, 0, 0], 
+                        [0, 0, 0, 0, 0, 0, 0], 
+                        [0, 0, 0, 0, 0, 0, 0]], 
+                        turn_count: 0, num_contestants: 1, player1_email: user_email, finished: false)
   end
 
   def self.game_state(game_id)
