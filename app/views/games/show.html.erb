@@ -1,0 +1,9 @@
+<h1>Connect Four Game Board</h1>
+<h3><%= @welcome %></h3>
+
+<% if @welcome.include?('VS.') %>
+    <%= render 'games/board' %>
+<% end %>
+
+<br>
+<div><%= link_to 'Back To User Page', root_path %></div>

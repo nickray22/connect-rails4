@@ -1,0 +1,39 @@
+<% if @your_turn %>
+    <table>
+      <tr>
+        <% [*0..6].each do |n| %>
+            <td><%= button_to "#{n}", "/games/#{n}", params: { :column => n }, :method => :put %></td>
+        <% end %>
+      </tr>
+      <% @board.first.board.each do |row| %>
+          <tr>
+            <% row.each do |col| %>
+                <% if col == 1 %>
+                    <td><%= image_tag('Goku1.png') %></td>
+                <% elsif col == 2 %>
+                    <td><%= image_tag('Cell1.png') %></td>
+                <% else %>
+                    <td><%= image_tag('blank1.png') %></td>
+                <% end %>
+            <% end %>
+          </tr>
+      <% end %>
+    </table>
+<% else %>
+    <h3>Waiting on opponent to take his or her turn.</h3>
+    <table>
+      <% @board.first.board.each do |row| %>
+          <tr>
+            <% row.each do |col| %>
+                <% if col == 1 %>
+                    <td><%= image_tag('Goku1.png') %></td>
+                <% elsif col == 2 %>
+                    <td><%= image_tag('Cell1.png') %></td>
+                <% else %>
+                    <td><%= image_tag('blank1.png') %></td>
+                <% end %>
+            <% end %>
+          </tr>
+      <% end %>
+    </table>
+<% end %>

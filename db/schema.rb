@@ -16,10 +16,12 @@ ActiveRecord::Schema.define(version: 20150213192420) do
   create_table "games", force: :cascade do |t|
     t.text     "board"
     t.integer  "turn_count"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.boolean  "finished",      default: false, null: false
-    t.integer  "players_count"
+    t.integer  "num_contestants"
+    t.string   "player1_email"
+    t.string   "player2_email"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.boolean  "finished",        default: false, null: false
   end
 
   create_table "players", force: :cascade do |t|

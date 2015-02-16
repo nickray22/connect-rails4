@@ -1,0 +1,8 @@
+<h1>Connect Four Users:</h1>
+
+<% @users.each do |user| %>
+    <h3><%= user.email %></h3>
+<% end %>
+
+<%= link_to 'Create New User', new_user_session_path %> |
+<%= link_to 'Sign In', user_session_path %>

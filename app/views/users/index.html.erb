@@ -1,0 +1,11 @@
+<h1>Connect Four</h1>
+<% if current_user %>
+    <h3>Welcome, <%= current_user.email %></h3>
+
+    <%= link_to 'Join Game', games_join_path, method: :post %> |
+
+    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+
+<% else %>
+    <%= render 'users/sign_out' %>
+<% end %>
